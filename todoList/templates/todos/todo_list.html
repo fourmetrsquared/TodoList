@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All tasks</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="create_item">
+        <a href="{% url 'add_task' %}" class="create-btn">➕ Create New To-Do</a>
+    </div>
+
+    <div class="todo">
+        {% for todo in todo_list %}
+            <div class="todo_item">
+                <p class="todo_title">{{ todo.title }}</p>
+                <p class="todo_description">{{ todo.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
